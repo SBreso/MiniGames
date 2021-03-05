@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "W0Sf2ABOR8DTeSfFeY273MOBNviVVnFed/5ENglnGD3tcX9S76gB9NdKUH1n/hNrDbEkzyT/QstVRupPgIYQ5g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\usuario\\source\\repos\\MiniGames\\MiniGames.Contracts\\MiniGames.Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\usuario\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\usuario\\.nuget\\packages\\unity\\5.11.9\\unity.5.11.9.nupkg.sha512"
+  ],
+  "logs": []
+}

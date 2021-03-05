@@ -1,0 +1,9 @@
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\bin\Debug\netcoreapp3.1\MiniGames.Contracts.deps.json
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\bin\Debug\netcoreapp3.1\MiniGames.Contracts.dll
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\bin\Debug\netcoreapp3.1\MiniGames.Contracts.pdb
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\netcoreapp3.1\MiniGames.Contracts.AssemblyInfoInputs.cache
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\netcoreapp3.1\MiniGames.Contracts.AssemblyInfo.cs
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\netcoreapp3.1\MiniGames.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\netcoreapp3.1\MiniGames.Contracts.dll
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\netcoreapp3.1\MiniGames.Contracts.pdb
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\netcoreapp3.1\MiniGames.Contracts.csprojAssemblyReference.cache

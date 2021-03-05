@@ -1,0 +1,13 @@
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\bin\Debug\net5.0\MiniGames.Contracts.deps.json
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\bin\Debug\net5.0\MiniGames.Contracts.dll
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\bin\Debug\net5.0\ref\MiniGames.Contracts.dll
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\bin\Debug\net5.0\MiniGames.Contracts.pdb
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.Properties.Resources.resources
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.csproj.GenerateResource.cache
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.AssemblyInfoInputs.cache
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.AssemblyInfo.cs
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.dll
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\ref\MiniGames.Contracts.dll
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.pdb
