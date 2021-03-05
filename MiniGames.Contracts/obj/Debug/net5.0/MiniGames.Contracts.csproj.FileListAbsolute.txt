@@ -11,3 +11,4 @@ C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\Min
 C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.dll
 C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\ref\MiniGames.Contracts.dll
 C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.pdb
+C:\Users\usuario\source\repos\MiniGames\MiniGames.Contracts\obj\Debug\net5.0\MiniGames.Contracts.csprojAssemblyReference.cache

@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGames"
-        xmlns:p="clr-namespace:MiniGames.UIGames.Properties;assembly=MiniGames.UIGames"
+        xmlns:UIContracts="clr-namespace:MiniGames.UIGames.Properties;assembly=MiniGames.UIGames"
         mc:Ignorable="d"
         MaxHeight="250"
         MaxWidth="350"
-        Title="{x:Static p:Resources.CONFIG_GAME_TITLE}" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+        Title="{x:Static UIContracts:Resources.CONFIG_GAME_TITLE}" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
     <Grid>
         <Grid.Resources>
             <Style TargetType="{x:Type GroupBox}">
@@ -33,21 +33,21 @@
             <Label HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="{Binding Name}"/>
             <Image Margin="5" Source="{Binding Image.Source}" Width="100" Height="100"/>
         </StackPanel>
-        <GroupBox Header="{x:Static p:Resources.PLAYERS}" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5">
+        <GroupBox Header="{x:Static UIContracts:Resources.PLAYERS}" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5">
             <StackPanel>
                 <ComboBox ItemsSource="{Binding MaxPlayersItems}" SelectedItem="{Binding PlayersCount, Mode=TwoWay}" x:Name="playersCount" Grid.Row="1" Grid.Column="1" Margin="3"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="{x:Static p:Resources.TIME_PER_TURN}" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5">
+        <GroupBox Header="{x:Static UIContracts:Resources.TIME_PER_TURN}" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5">
             <StackPanel>
-                <CheckBox x:Name="hasTimeLimit" IsChecked="{Binding UseTimeLimit, Mode=TwoWay}" Margin="3" IsEnabled="{Binding CanUseTimeLimit}" Content="{x:Static p:Resources.USE_TIME_PER_TURN}"/>
+                <CheckBox x:Name="hasTimeLimit" IsChecked="{Binding UseTimeLimit, Mode=TwoWay}" Margin="3" IsEnabled="{Binding CanUseTimeLimit}" Content="{x:Static UIContracts:Resources.USE_TIME_PER_TURN}"/>
                 <ComboBox IsEnabled="{Binding ElementName=hasTimeLimit, Path=IsChecked}" ItemsSource="{Binding MaxTimeLimitItems}" SelectedItem="{Binding TimeLimit , Mode=TwoWay}" Margin="3"/>
             </StackPanel>
         </GroupBox>
 
         <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Right" Orientation="Horizontal" Margin="3">
-            <Button Name="okButton" Content="{x:Static p:Resources.OK_BUTTON}" Click="okButton_Click"/>
-            <Button Name="cancelButton" Content="{x:Static p:Resources.CANCEL_BUTTON}" Click="cancelButton_Click"/>
+            <Button Name="okButton" Content="{x:Static UIContracts:Resources.OK_BUTTON}" Click="okButton_Click"/>
+            <Button Name="cancelButton" Content="{x:Static UIContracts:Resources.CANCEL_BUTTON}" Click="cancelButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -61,21 +61,21 @@ namespace MiniGames.Contracts.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a 4 en raya.
+        /// </summary>
+        public static string _4CONNECT {
+            get {
+                return ResourceManager.GetString("_4CONNECT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
         public static byte[] _4Raya {
             get {
                 object obj = ResourceManager.GetObject("_4Raya", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a 4 en raya.
-        /// </summary>
-        public static string CONNECT {
-            get {
-                return ResourceManager.GetString("CONNECT", resourceCulture);
             }
         }
     }

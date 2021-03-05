@@ -17,7 +17,8 @@
         <WrapPanel x:Name="mainWrapPanel" Orientation="Vertical" HorizontalAlignment="Center">
         </WrapPanel>
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="3" VerticalAlignment="Bottom">
-            <Button Name="okButton" Content="{x:Static UIContracts:Resources.OK_BUTTON}"/>
+            <Button Name="okButton" Content="{x:Static UIContracts:Resources.OK_BUTTON}" Click="okButton_Click"/>
+            <Button Name="cancelButton" Content="{x:Static UIContracts:Resources.CANCEL_BUTTON}" Click="cancelButton_Click"/>
         </StackPanel>
     </StackPanel>
 </Window>

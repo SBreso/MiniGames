@@ -7,7 +7,7 @@
              xmlns:p="clr-namespace:MiniGames.UIGames.Properties"
              xmlns:viewModels="clr-namespace:MiniGames.UIGames.ViewModel"
              MinWidth="225" Background="White"
-             Height="60"
+             Height="92"
              xmlns:system="clr-namespace:System;assembly=mscorlib">
     <UserControl.DataContext>
         <viewModels:ConfigPlayersViewModel/>
@@ -26,18 +26,21 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.AVATAR}" HorizontalAlignment="Center"/>
         <ComboBox Grid.Row="1" Grid.Column="0" 
-                  ItemsSource="{Binding Avatars, Mode=TwoWay}" SelectedItem="{Binding AvatarSelected}" Padding="5">
+                  ItemsSource="{Binding Avatars, Mode=TwoWay}" SelectedItem="{Binding AvatarSelected}" Padding="5" SelectedIndex="0">
             <ComboBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ComboBoxItem}">
                     <Setter Property="IsEnabled" Value="{Binding Enabled}"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="{Binding Color}"/>
                 </Style>
             </ComboBox.ItemContainerStyle>
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <WrapPanel Margin="0 5 0 5" Height="80">
-                        <Image Width="30" Height="30" Stretch="Fill" Source="{Binding Image}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,15,0"/>
-                        <Label Content="{Binding NickName}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
-                    </WrapPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="{Binding Image}" Margin="5" Height="50" Width="50"/>
+                        <Label Content="{Binding NickName}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>

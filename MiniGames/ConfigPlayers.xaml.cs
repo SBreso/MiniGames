@@ -1,5 +1,6 @@
 ﻿using MiniGames.Contracts;
 using MiniGames.UIGames;
+using MiniGames.UIGames.Models;
 using MiniGames.UIGames.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,10 @@ namespace MiniGames
         IConfigPlayersViewModel ViewModel;
         List<ConfigPlayerControl> configPlayerControls;
         public IList<IPlayer> Players { get; internal set; }
-        private IList<Avatar> avatarsSelected;
         public ConfigPlayers()
         {
             this.configPlayerControls = new List<UIGames.ConfigPlayerControl>();
-            this.avatarsSelected = new List<Avatar>();
+            this.Players = new List<IPlayer>();
             InitializeComponent();
         }
 
@@ -32,7 +32,7 @@ namespace MiniGames
         private void LoadCombos()
         {
             this.configPlayerControls.Clear();
-            for (int i = 0; i < this.ViewModel.PlayersCount; i++)
+            for (int i = 0; i < this.ViewModel.TotalPlayers; i++)
             {
                 var configPlayerControl = new ConfigPlayerControl();
                 configPlayerControl.AvatarSelectedEvent += ConfigPlayerControl_AvatarSelectedEvent;
@@ -43,18 +43,36 @@ namespace MiniGames
             }
         }
 
-        private void ConfigPlayerControl_AvatarSelectedEvent(Avatar avatar)
+        private void ConfigPlayerControl_AvatarSelectedEvent()
         {
-            this.avatarsSelected.Clear();
+            var avatarsSelected = new List<Avatar>();
             foreach (var configPlayerControl in this.configPlayerControls)
             {
                 var avatarSelected = ((ConfigPlayersViewModel)configPlayerControl.DataContext).AvatarSelected;
-                if (avatarSelected != null) this.avatarsSelected.Add(avatarSelected);
+                if (avatarSelected != null) avatarsSelected.Add(avatarSelected);
             }
             foreach (var configPlayerControl in this.configPlayerControls)
             {
-                configPlayerControl.DisableAvatar(this.avatarsSelected.Distinct().ToList());
+                configPlayerControl.DisableAvatar(avatarsSelected.Distinct().ToList());
             }
+        }
+
+        private void okButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Players.Clear();
+            foreach (var configPlayerControl in this.configPlayerControls)
+            {
+                var player = ((ConfigPlayersViewModel)configPlayerControl.DataContext).Player;
+                if (player != null) this.Players.Add(player);
+            }
+            this.DialogResult = true;
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

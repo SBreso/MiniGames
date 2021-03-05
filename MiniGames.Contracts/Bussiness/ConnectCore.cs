@@ -7,7 +7,7 @@ namespace MiniGames.Contracts.Bussiness
     {
         public override int MaxPlayers => 2;
 
-        public override string Name => Resources.CONNECT;
+        public override string Name => Resources._4CONNECT;
 
         public override int MaxTimeLimit => 120000;
 

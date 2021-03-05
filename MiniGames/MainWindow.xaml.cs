@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 
 namespace MiniGames
 {
@@ -85,6 +84,10 @@ namespace MiniGames
             {
                 this.selectedGame.Players = configPlayers.Players;
                 this.LoadSelectedGame();
+            }
+            else
+            {
+                this.ShowConfigGame();
             }
         }
 
