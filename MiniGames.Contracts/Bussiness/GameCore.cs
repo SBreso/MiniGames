@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace MiniGames.Contracts.Bussiness
 {
@@ -44,16 +45,15 @@ namespace MiniGames.Contracts.Bussiness
             set
             {
                 this.playerOnTurn = value;
-                RaisePropertyChangedEvent("PlayerOnTurn");
+                OnPropertyChanged("PlayerOnTurn");
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void RaisePropertyChangedEvent(string propertyName)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChangedEventHandler handler = this.PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public abstract void Run();

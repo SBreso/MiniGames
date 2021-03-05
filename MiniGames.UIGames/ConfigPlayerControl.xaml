@@ -6,15 +6,12 @@
              xmlns:local="clr-namespace:MiniGames.UIGames"
              xmlns:p="clr-namespace:MiniGames.UIGames.Properties"
              xmlns:viewModels="clr-namespace:MiniGames.UIGames.ViewModel"
-             MinWidth="225" Background="White"
-             Height="92"
-             xmlns:system="clr-namespace:System;assembly=mscorlib">
+             MinWidth="255" MinHeight="100"
+             xmlns:system="clr-namespace:System;assembly=mscorlib" Loaded="UserControl_Loaded">
     <UserControl.DataContext>
         <viewModels:ConfigPlayersViewModel/>
     </UserControl.DataContext>
-    <UserControl.Resources>
-
-    </UserControl.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -24,15 +21,20 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.AVATAR}" HorizontalAlignment="Center"/>
-        <ComboBox Grid.Row="1" Grid.Column="0" 
-                  ItemsSource="{Binding Avatars, Mode=TwoWay}" SelectedItem="{Binding AvatarSelected}" Padding="5" SelectedIndex="0">
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <DockPanel.Background>
+                <Binding ElementName="avatarComboBox" Path="SelectedItem.SolidBrushColor"/>
+            </DockPanel.Background>
+            <Label  Content="{x:Static p:Resources.AVATAR}" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+        </DockPanel>
+        <ComboBox x:Name="avatarComboBox" Grid.Row="1" Grid.Column="0" 
+                  ItemsSource="{Binding Avatars, Mode=TwoWay}" SelectedItem="{Binding AvatarSelected}" Padding="5">
             <ComboBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ComboBoxItem}">
                     <Setter Property="IsEnabled" Value="{Binding Enabled}"/>
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-                    <Setter Property="Background" Value="{Binding Color}"/>
+                    <Setter Property="Background" Value="{Binding SolidBrushColor}"/>
                 </Style>
             </ComboBox.ItemContainerStyle>
             <ComboBox.ItemTemplate>
@@ -44,7 +46,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DockPanel Margin="5" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <DockPanel Margin="5" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <CheckBox Content="AI" />
         </DockPanel>
 

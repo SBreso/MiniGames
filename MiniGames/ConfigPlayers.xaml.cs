@@ -34,7 +34,7 @@ namespace MiniGames
             this.configPlayerControls.Clear();
             for (int i = 0; i < this.ViewModel.TotalPlayers; i++)
             {
-                var configPlayerControl = new ConfigPlayerControl();
+                var configPlayerControl = new ConfigPlayerControl(i);
                 configPlayerControl.AvatarSelectedEvent += ConfigPlayerControl_AvatarSelectedEvent;
                 configPlayerControl.Margin = new Thickness(5);
                 this.Height += configPlayerControl.Height;

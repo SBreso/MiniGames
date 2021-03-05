@@ -10,10 +10,13 @@ namespace MiniGames.UIGames
     /// </summary>
     public partial class ConfigPlayerControl : UserControl
     {
+        private readonly int _defaultSelectedAvatarIndex;
+
         public delegate void AvatarSelectedHandler();
         public event AvatarSelectedHandler AvatarSelectedEvent;
-        public ConfigPlayerControl()
+        public ConfigPlayerControl(int defaultSelectedAvatarIndex)
         {
+            this._defaultSelectedAvatarIndex = defaultSelectedAvatarIndex;
             InitializeComponent();
             ((ConfigPlayersViewModel)this.DataContext).PropertyChanged += ConfigPlayerControl_PropertyChanged;
         }
@@ -29,6 +32,11 @@ namespace MiniGames.UIGames
         public void DisableAvatar(IList<Avatar> avatars)
         {
             ((ConfigPlayersViewModel)this.DataContext).DisableAvatar(avatars);
+        }
+
+        private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.avatarComboBox.SelectedIndex = this._defaultSelectedAvatarIndex;
         }
     }
 }

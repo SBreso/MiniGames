@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
+using Color = System.Windows.Media.Color;
 
 namespace MiniGames.UIGames.Models
 {
@@ -24,6 +26,8 @@ namespace MiniGames.UIGames.Models
                 OnPropertyChanged("Enabled");
             }
         }
+
+        public SolidColorBrush SolidBrushColor => new SolidColorBrush(this.Color);
 
         public event PropertyChangedEventHandler PropertyChanged;
 
