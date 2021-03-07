@@ -1,9 +1,11 @@
 ﻿using MiniGames.Contracts;
+using MiniGames.UIGames.GameControls;
 using MiniGames.UIGames.ViewModel;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace MiniGames
 {
@@ -18,6 +20,8 @@ namespace MiniGames
         public IMainWindowViewModel ViewModel { get; private set; }
 
         private IList<CommandBinding> playGameCommands = new List<CommandBinding>();
+        private UserControl _baseBoard;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -77,12 +81,15 @@ namespace MiniGames
 
         private void FillPlayers()
         {
-            var configPlayersViewModel = new ConfigPlayersViewModel(this.selectedGame.PlayersCount);
-            var configPlayers = new ConfigPlayers() { DataContext = configPlayersViewModel };
+            var configPlayerViewModel = new ConfigPlayersViewModel()
+            {
+                TotalPlayers = this.selectedGame.PlayersCount
+            };
+            var configPlayers = new ConfigPlayers() { DataContext = configPlayerViewModel };
             configPlayers.ShowDialog();
             if (configPlayers.DialogResult ?? true)
             {
-                this.selectedGame.Players = configPlayers.Players;
+                this.selectedGame.Players = ((ConfigPlayersViewModel)configPlayers.DataContext).Players;
                 this.LoadSelectedGame();
             }
             else
@@ -93,7 +100,20 @@ namespace MiniGames
 
         private void LoadSelectedGame()
         {
-            MessageBox.Show("Loading...");
+            var table = (Grid)Application.Current.MainWindow.FindName("table");
+            this._baseBoard = this.ViewModel.GetUIGame(this.selectedGame.GetType());
+            this._baseBoard.DataContext = this.selectedGame;
+            table.Children.Clear();
+            table.Children.Add(this._baseBoard);
+        }
+
+        private void table_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (this._baseBoard != null)
+            {
+                ((IBaseBoard)this._baseBoard).OnContainerSizeChanged(e.NewSize.Height, e.NewSize.Width);
+            }
+
         }
     }
 }

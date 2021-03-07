@@ -16,9 +16,9 @@
                 <TextBlock Name="statuBar"/>
             </StatusBarItem>
         </StatusBar>
-        <DockPanel>
+        <Grid x:Name="table" SizeChanged="table_SizeChanged">
 
-        </DockPanel>
+        </Grid>
     </DockPanel>
 
 </Window>

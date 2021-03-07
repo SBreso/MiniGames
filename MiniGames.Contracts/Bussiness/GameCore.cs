@@ -6,6 +6,8 @@ namespace MiniGames.Contracts.Bussiness
 {
     public abstract class GameCore : IGameCore
     {
+        public const int ROW_COUNT = 7;
+        public const int COLUMN_COUNT = 6;
         private IPlayer playerOnTurn;
         private GameCoreModeEnum gameCoreMode;
 
@@ -35,7 +37,7 @@ namespace MiniGames.Contracts.Bussiness
             set
             {
                 this.gameCoreMode = value;
-                RaisePropertyChangedEvent("GameCoreMode");
+                OnPropertyChanged("GameCoreMode");
             }
         }
 

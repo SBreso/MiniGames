@@ -1,24 +1,30 @@
-﻿using MiniGames.UIGames.Models;
+﻿using MiniGames.Contracts;
+using MiniGames.UIGames.Models;
 using MiniGames.UIGames.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MiniGames.UIGames
 {
     /// <summary>
     /// Lógica de interacción para ConfigPlayerControl.xaml
     /// </summary>
-    public partial class ConfigPlayerControl : UserControl
+    public partial class SelectAvatarControl : UserControl
     {
-        private readonly int _defaultSelectedAvatarIndex;
+        private readonly int _defaultSelectedIndex;
 
         public delegate void AvatarSelectedHandler();
         public event AvatarSelectedHandler AvatarSelectedEvent;
-        public ConfigPlayerControl(int defaultSelectedAvatarIndex)
+        
+        public SelectAvatarControl(int defaultSelectedIndex)
         {
-            this._defaultSelectedAvatarIndex = defaultSelectedAvatarIndex;
-            InitializeComponent();
-            ((ConfigPlayersViewModel)this.DataContext).PropertyChanged += ConfigPlayerControl_PropertyChanged;
+            this._defaultSelectedIndex = defaultSelectedIndex;
+            InitializeComponent();            
         }
 
         private void ConfigPlayerControl_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -27,16 +33,13 @@ namespace MiniGames.UIGames
             {
                 this.AvatarSelectedEvent();
             }
-        }
-
-        public void DisableAvatar(IList<Avatar> avatars)
-        {
-            ((ConfigPlayersViewModel)this.DataContext).DisableAvatar(avatars);
+            
         }
 
         private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            this.avatarComboBox.SelectedIndex = this._defaultSelectedAvatarIndex;
+            ((ISelectAvatarControlViewModel)this.DataContext).PropertyChanged += ConfigPlayerControl_PropertyChanged;
+            this.avatarComboBox.SelectedIndex = this._defaultSelectedIndex;
         }
     }
 }

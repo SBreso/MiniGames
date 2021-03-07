@@ -2,13 +2,22 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="ConfigPlayerControl.xaml.cs">
+    <Compile Update="CustomControls\SelectAvatarControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GameControls\ConnectBoard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ConfigPlayerControl.xaml">
+    <Page Update="CustomControls\SelectAvatarControl.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="GameControls\ConnectBoard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Update="UIResources.xaml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
 </Project>

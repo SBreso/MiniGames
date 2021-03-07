@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:UIContracts="clr-namespace:MiniGames.UIGames.Properties;assembly=MiniGames.UIGames"
+        xmlns:local="clr-namespace:MiniGames"
         mc:Ignorable="d"
         Title="{x:Static UIContracts:Resources.CONFIG_PLAYERS_TITLE}" Loaded="Window_Loaded" ShowInTaskbar="False" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Window.Resources>

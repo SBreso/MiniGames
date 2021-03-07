@@ -1,6 +1,6 @@
 ﻿using MiniGames.Contracts;
 using MiniGames.Contracts.Bussiness;
-using System.Linq;
+using MiniGames.UIGames.GameControls;
 using System.Windows;
 using Unity;
 
@@ -18,7 +18,7 @@ namespace MiniGames
 
             this.RegisterOnContainer();
 
-            var mainWindowViewModel = new MainWindowViewModel(this.unityContainer.ResolveAll<IGameCore>().ToList());
+            var mainWindowViewModel = new MainWindowViewModel(this.unityContainer);
             var mainWindow = new MainWindow() { DataContext = mainWindowViewModel };
             mainWindow.Show();
         }
@@ -27,11 +27,19 @@ namespace MiniGames
         {
             unityContainer = new UnityContainer();
             this.RegisterGameCore();
+            this.RegisterUIGame();
         }
+
 
         private void RegisterGameCore()
         {
             unityContainer.RegisterSingleton<IGameCore, ConnectCore>("Connect");
         }
+
+        private void RegisterUIGame()
+        {
+            unityContainer.RegisterSingleton<IConnectBoard, ConnectBoard>();
+        }
+
     }
 }

@@ -1,5 +1,7 @@
 ﻿using MiniGames.Contracts;
+using System;
 using System.Collections.Generic;
+using System.Windows.Controls;
 
 namespace MiniGames
 {
@@ -7,5 +9,6 @@ namespace MiniGames
     {
         IList<IGameCore> Games { get; }
 
+        UserControl GetUIGame(Type gameType);
     }
 }

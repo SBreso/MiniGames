@@ -70,31 +70,11 @@ namespace MiniGames.UIGames.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap c3po {
-            get {
-                object obj = ResourceManager.GetObject("c3po", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         public static string CANCEL_BUTTON {
             get {
                 return ResourceManager.GetString("CANCEL_BUTTON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap chewacca {
-            get {
-                object obj = ResourceManager.GetObject("chewacca", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -126,76 +106,6 @@ namespace MiniGames.UIGames.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap darkBaider {
-            get {
-                object obj = ResourceManager.GetObject("darkBaider", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap darkSirius {
-            get {
-                object obj = ResourceManager.GetObject("darkSirius", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap hanSolo {
-            get {
-                object obj = ResourceManager.GetObject("hanSolo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap joda {
-            get {
-                object obj = ResourceManager.GetObject("joda", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap leia {
-            get {
-                object obj = ResourceManager.GetObject("leia", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap luke {
-            get {
-                object obj = ResourceManager.GetObject("luke", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap mandalorian {
-            get {
-                object obj = ResourceManager.GetObject("mandalorian", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Mini juegos.
         /// </summary>
         public static string MINI_GAME_TITLE {
@@ -223,16 +133,6 @@ namespace MiniGames.UIGames.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap obiWan {
-            get {
-                object obj = ResourceManager.GetObject("obiWan", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Aceptar.
         /// </summary>
         public static string OK_BUTTON {
@@ -247,26 +147,6 @@ namespace MiniGames.UIGames.Properties {
         public static string PLAYERS {
             get {
                 return ResourceManager.GetString("PLAYERS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap r2d2 {
-            get {
-                object obj = ResourceManager.GetObject("r2d2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap startTropper {
-            get {
-                object obj = ResourceManager.GetObject("startTropper", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
