@@ -1,5 +1,4 @@
-﻿using MiniGames.Contracts;
-using MiniGames.UIGames.Models;
+﻿using MiniGames.UIGames.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

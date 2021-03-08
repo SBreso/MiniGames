@@ -1,11 +1,11 @@
-﻿using MiniGames.Contracts;
+﻿using MiniGames.UIGames.Bussiness;
+using MiniGames.UIGames.CustomControls;
+using MiniGames.UIGames.Extensions;
 using MiniGames.UIGames.GameControls;
-using MiniGames.UIGames.ViewModel;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace MiniGames
 {
@@ -48,7 +48,7 @@ namespace MiniGames
                     Header = game.Name,
                     Command = command,
                     CommandParameter = game,
-                    Icon = CommonUtils.GetIconGame(game)
+                    Icon = new Image() { Source = game.Image.ToImageSource() }
                 };
                 this.menuNew.Items.Add(gameMenuItem);
             }
@@ -90,12 +90,29 @@ namespace MiniGames
             if (configPlayers.DialogResult ?? true)
             {
                 this.selectedGame.Players = ((ConfigPlayersViewModel)configPlayers.DataContext).Players;
+                this.LoadAvatarPanel();
                 this.LoadSelectedGame();
             }
             else
             {
                 this.ShowConfigGame();
             }
+        }
+
+        private void LoadAvatarPanel()
+        {
+            var playersPanel = (DockPanel)Application.Current.MainWindow.FindName("players");
+            var avatarListControl = new AvatarListControl() { DataContext = this.selectedGame };
+            avatarListControl.Loaded += AvatarListControl_Loaded;
+            playersPanel.Children.Clear();
+            playersPanel.Children.Add(avatarListControl);
+        }
+
+        private void AvatarListControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var table = (Grid)Application.Current.MainWindow.FindName("table");
+            var playersPanel = (DockPanel)Application.Current.MainWindow.FindName("players");
+            table.Height = playersPanel.Height;
         }
 
         private void LoadSelectedGame()
@@ -113,6 +130,11 @@ namespace MiniGames
             {
                 ((IBaseBoard)this._baseBoard).OnContainerSizeChanged(e.NewSize.Height, e.NewSize.Width);
             }
+
+        }
+
+        private void players_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
 
         }
     }

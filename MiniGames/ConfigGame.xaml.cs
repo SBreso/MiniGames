@@ -1,4 +1,4 @@
-﻿using MiniGames.Contracts;
+﻿using MiniGames.UIGames.Bussiness;
 using System.Windows;
 
 namespace MiniGames

@@ -1,6 +1,9 @@
-﻿using MiniGames.Contracts.Bussiness;
+﻿using MiniGames.UIGames.Bussiness;
 using System;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace MiniGames.UIGames.GameControls
@@ -21,7 +24,30 @@ namespace MiniGames.UIGames.GameControls
         {
             this.GameCore = (ConnectCore)this.DataContext;
             this.OnContainerSizeChanged(this.board.ActualHeight, this.board.ActualWidth);
+
+            this.GameCore.PropertyChanged += GameCore_PropertyChanged;
+            this.GameCore.Run();
+            
             return;
+        }
+
+        private void GameCore_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName== "PlayerOnTurn")
+            {
+                this.PlayerOnTurnChanged();
+            }
+        }
+
+        private void PlayerOnTurnChanged()
+        {
+            var newColor = this.GameCore.PlayerOnTurn.Color;
+            var fill = (LinearGradientBrush)this.piece.Fill.Clone();
+            fill.GradientStops.Last().Color = newColor;
+            this.piece.Fill = fill;
+            var stroke = (LinearGradientBrush)this.piece.Stroke.Clone();
+            stroke.GradientStops.Last().Color = newColor;
+            this.piece.Stroke = stroke;
         }
 
         public override void OnContainerSizeChanged(double newHeight, double newWidth)
@@ -35,11 +61,11 @@ namespace MiniGames.UIGames.GameControls
             ResizeSpaces(newCellSize);
         }
         
-        private void ResizePiece(double newDiamtre)
+        private void ResizePiece(double newDiametre)
         {
-            piece.StrokeThickness = newDiamtre - newDiamtre / 10;
-            piece.Height = newDiamtre;
-            piece.Width = newDiamtre;
+            piece.StrokeThickness = newDiametre / 10;
+            piece.Height = newDiametre;
+            piece.Width = newDiametre;
         }
 
         private void ResizeSpaces(double newDiamtre)
@@ -53,7 +79,7 @@ namespace MiniGames.UIGames.GameControls
         }
 
 
-        private void dock_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        private void board_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
         {
             double widthBoard = this.board.ActualWidth;
             double ratio = (piece.Width / 2);
@@ -64,16 +90,17 @@ namespace MiniGames.UIGames.GameControls
             }
         }
 
-        private void dock_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void board_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             double boardWidth = this.board.ActualWidth;//ancho del tablero
             double x = e.GetPosition(this.board).X;//posicion X del puntero respecto al tablero
             double xCell = boardWidth / ConnectCore.COLUMN_COUNT;//ancho de la celda
-            var colum = 0;
-            while (colum < ConnectCore.COLUMN_COUNT && x >= (colum + 1) * xCell)//donde deja caer la ficha
+            var column = 0;
+            while (column < ConnectCore.COLUMN_COUNT && x >= (column + 1) * xCell)//donde deja caer la ficha
             {
-                colum++;
+                column++;
             }
+            this.GameCore.NewPieceOn(column);
         }
     }
 }

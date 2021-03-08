@@ -26,13 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="UIResources.xaml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\Games\4Raya.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -40,10 +33,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\MiniGames.Contracts\MiniGames.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -61,6 +61,25 @@ namespace MiniGames.UIGames.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a 4 en raya.
+        /// </summary>
+        public static string _4CONNECT {
+            get {
+                return ResourceManager.GetString("_4CONNECT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        public static System.Drawing.Icon _4Raya {
+            get {
+                object obj = ResourceManager.GetObject("_4Raya", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Avatar.
         /// </summary>
         public static string AVATAR {

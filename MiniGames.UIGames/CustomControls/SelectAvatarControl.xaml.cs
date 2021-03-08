@@ -1,13 +1,5 @@
-﻿using MiniGames.Contracts;
-using MiniGames.UIGames.Models;
-using MiniGames.UIGames.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using MiniGames.UIGames.ViewModel;
 using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace MiniGames.UIGames
 {

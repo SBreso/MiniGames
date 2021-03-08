@@ -1,5 +1,4 @@
-﻿using MiniGames.Contracts;
-using MiniGames.Contracts.Bussiness;
+﻿using MiniGames.UIGames.Models;
 using MiniGames.UIGames.ViewModel;
 using System.Collections.Generic;
 
@@ -8,18 +7,14 @@ namespace MiniGames
     public class ConfigPlayersViewModel
     {
         public int TotalPlayers { get; set; }
-        public List<IPlayer> Players { get; set; }
+        public List<IAvatar> Players { get; set; }
 
         internal void FillPlayers(List<SelectAvatarControlViewModel> selectPlayerControls)
         {
-            this.Players = new List<IPlayer>();
+            this.Players = new List<IAvatar>();
             foreach (var selectAvatarControlViewModel in selectPlayerControls)
             {
-                this.Players.Add(new Player()
-                {
-                    Avatar = selectAvatarControlViewModel.AvatarSelected.AvatarEnum,
-                    IsAI = selectAvatarControlViewModel.IsAI
-                });
+                this.Players.Add(selectAvatarControlViewModel.AvatarSelected);
             }
         }
     }

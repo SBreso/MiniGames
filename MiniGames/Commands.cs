@@ -1,9 +1,4 @@
-﻿using MiniGames.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MiniGames.UIGames.Bussiness;
 using System.Windows.Input;
 
 namespace MiniGames

@@ -6,8 +6,15 @@
              xmlns:local="clr-namespace:MiniGames.UIGames.GameControls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="600">
-
-    <Grid x:Name="board" Background="Black" MouseMove="dock_MouseMove" MouseLeftButtonUp="dock_MouseLeftButtonUp">
+    <local:BaseBoard.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../UIResources/UIResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:BaseBoard.Resources>
+    
+    <Grid x:Name="board" Background="Black" MouseMove="board_MouseMove" MouseLeftButtonUp="board_MouseLeftButtonUp">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -27,7 +34,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Background="White">
-            <Ellipse x:Name="piece" Fill="Black" HorizontalAlignment="Left" d:Width="100" d:Height="100" />
+            <Ellipse Stroke="{DynamicResource EllipseStroke}" Fill="{DynamicResource EllipseFill}" x:Name="piece" HorizontalAlignment="Left" d:Width="100" d:Height="100" d:StrokeThickness="10"/>
         </Border>
         <!---->
         <Ellipse Grid.Row="7" Grid.Column="0" Fill="White" d:Width="90" d:Height="90"/>

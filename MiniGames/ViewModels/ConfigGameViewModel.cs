@@ -1,4 +1,5 @@
-﻿using MiniGames.Contracts;
+﻿using MiniGames.UIGames.Bussiness;
+using MiniGames.UIGames.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
@@ -15,7 +16,7 @@ namespace MiniGames
             this.MaxPlayers = game.MaxPlayers;
             this.MaxTimeLimit = game.MaxTimeLimit;
             this.CanUseTimeLimit = game.CanUseTimeLimit;
-            this.Image = CommonUtils.GetIconGame(game);
+            this.Image = new Image() { Source = game.Image.ToImageSource() };
             this.FillMaxPlayersItems();
             this.FillMaxTimeLimitItems();
         }

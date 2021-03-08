@@ -16,9 +16,15 @@
                 <TextBlock Name="statuBar"/>
             </StatusBarItem>
         </StatusBar>
-        <Grid x:Name="table" SizeChanged="table_SizeChanged">
-
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel x:Name="players" Grid.Column="0" SizeChanged="players_SizeChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Grid x:Name="table" Grid.Column="1" SizeChanged="table_SizeChanged"/>
         </Grid>
+        
     </DockPanel>
 
 </Window>

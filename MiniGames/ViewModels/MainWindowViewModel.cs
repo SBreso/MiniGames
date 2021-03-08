@@ -1,5 +1,4 @@
-﻿using MiniGames.Contracts;
-using MiniGames.Contracts.Bussiness;
+﻿using MiniGames.UIGames.Bussiness;
 using MiniGames.UIGames.GameControls;
 using System;
 using System.Collections.Generic;

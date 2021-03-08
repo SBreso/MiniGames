@@ -1,4 +1,4 @@
-﻿using MiniGames.Contracts.Bussiness;
+﻿using MiniGames.UIGames.Bussiness;
 
 namespace MiniGames.UIGames.GameControls
 {

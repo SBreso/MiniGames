@@ -34,11 +34,6 @@
                     <Setter Property="IsEnabled" Value="{Binding Enabled}"/>
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-                    <Setter Property="Background">
-                        <Setter.Value>
-                            <SolidColorBrush Color="{Binding Color}"/>
-                        </Setter.Value>
-                    </Setter>
                 </Style>
             </ComboBox.ItemContainerStyle>
             <ComboBox.ItemTemplate>
